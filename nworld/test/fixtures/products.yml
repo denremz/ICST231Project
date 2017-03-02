@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  srp: 9.99
+  retail_price: 9.99
+  distributor_price: 9.99
+  num_stock: 1
+  reserved: 1
+  img: MyString
+
+two:
+  name: MyString
+  srp: 9.99
+  retail_price: 9.99
+  distributor_price: 9.99
+  num_stock: 1
+  reserved: 1
+  img: MyString
