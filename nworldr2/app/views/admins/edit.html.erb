@@ -1,0 +1,28 @@
+
+<center>
+<%= form_for @product, :url => {:action => "update"} do |f| %>
+<h2> EDIT PRODUCT </h2>
+    <%= f.label :Name %><br>
+    <%= f.text_field :name %><br><br>
+  
+    <%= f.label :Suggested_Retail_Price%><br>
+    <%= f.text_field :srp %><br><br>
+
+    <%= f.label :Retail_Price %><br>
+    <%= f.text_field :retail_price %><br><br>
+
+    <%= f.label :Distributor_Price %><br>
+    <%= f.text_field :distributor_price %><br><br>
+
+    <%= f.label :Number_of_Stock %><br>
+    <%= f.text_field :num_stock %><br><br>
+
+    <%= f.label :Reserved %><br>
+    <%= f.text_field :reserved %><br><br>
+
+	<%= f.label :Product_Image%><br>
+    <%= f.text_field :img %><br><br>
+<%= f.submit %><br>
+<% end %>
+
+</center>
