@@ -1,0 +1,2 @@
+rails generate migration AddUsernameToUsers username:string
+bundle exec rake db:migrate
