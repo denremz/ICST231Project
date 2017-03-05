@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-
-
-
   devise_for :users 
-  
 
-  
-  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -61,29 +55,23 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  
-  
 
+  root 'users#index'
+  #root :to => redirect("/users/sign_in")
+  get 'products', to: 'users#index'
+  get 'admins/new', to: 'admins#new' 
+  post 'admins/create', to: 'admins#create'  
+  get 'admins/:id', to: 'admins#show'
+  get 'admins/:id/edit', to: 'admins#edit'
+  patch 'admins/:id/update', to: 'admins#update'
+  get 'admins/:id/delete', to: 'admins#delete'
+  get 'admins/:id/sold', to: 'admins#sold'
+  get 'admins/:id/add', to: 'admins#add'
 
-root 'users#index'
-#root :to => redirect("/users/sign_in")
+  patch 'users/:id/update', to: 'users#update'
 
-get 'products', to: 'users#index'
-get 'admins/new', to: 'admins#new' 
-post 'admins/create', to: 'admins#create'  
-get 'admins/:id', to: 'admins#show'
-get 'admins/:id/edit', to: 'admins#edit'
-patch 'admins/:id/update', to: 'admins#update'
-get 'admins/:id/delete', to: 'admins#delete'
-get 'admins/:id/sold', to: 'admins#sold'
-get 'admins/:id/add', to: 'admins#add'
-
-patch 'users/:id/update', to: 'users#update'
-
-get 'users', to: 'admins#user'
-get 'profile', to: 'users#usershow'
-get 'products/:id', to: 'users#show'
-get 'admins', to: 'admins#adminview'
-
-
+  get 'users', to: 'admins#user'
+  get 'profile', to: 'users#usershow'
+  get 'products/:id', to: 'users#show'
+  get 'admins', to: 'admins#adminview'
 end
