@@ -5,60 +5,60 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :User_Type %><br />
-    <%= f.text_field :usertype %><br /><br />
+    <%= f.label :User_Type %><br>
+    <%= f.select(:usertype,User::User_Class) %><br><br>
   </div>
 
   <div class="field">
-    <%= f.label :First_name %><br />
-    <%= f.text_field :first %><br /><br />
+    <%= f.label :First_name %><br>
+    <%= f.text_field :first %><br><br>
   </div>
 
   <div class="field">
-    <%= f.label :Last_name %><br />
-    <%= f.text_field :last %><br /><br />
+    <%= f.label :Last_name %><br>
+    <%= f.text_field :last %><br><br>
   </div>
 
   <div class="field">
-    <%= f.label :Username %><br />
-    <%= f.text_field :username %><br /><br />
+    <%= f.label :Username %><br>
+    <%= f.text_field :username %><br><br>
   </div>
 
   <div class="field">
-    <%= f.label :Gender %><br />
-    <%= f.text_field :sex %><br /><br />
+    <%= f.label :Gender %><br>
+    <%= f.select(:sex,User::Sex_Class) %><br><br>
   </div>
 
   <div class="field">
-    <%= f.label :Birthday %><br />
-    <%= f.text_field :birthday %><br /><br />
+    <%= f.label :Birthday %><br>
+    <%= f.text_field :birthday %><br><br>
   </div>
 
   <div class="field">
-    <%= f.label :Address %><br />
-    <%= f.text_field :address %><br /><br />
+    <%= f.label :Address %><br>
+    <%= f.text_field :address %><br><br>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %><br /><br />
+    <%= f.label :email %><br>
+    <%= f.email_field :email, autofocus: true %><br><br>
   </div>
 
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %><br /><br />
+    <% end %><br>
+    <%= f.password_field :password, autocomplete: "off" %><br><br>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %><br /><br />
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %><br><br>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %> <br /><br />
+    <%= f.submit "Sign up" %><br><br>
   </div>
 <% end %>
 
