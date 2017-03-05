@@ -20,7 +20,13 @@
     <%= f.text_field :reserved %><br><br>
 
     <%= f.label :Product_Image%><br>
-    <%= f.select(:img,Product::IMG_URL) %><br><br>
+    <%= f.select(:img,Product::IMG_SRC) %><br><br>
+
+    <i>List Of Images:<br></i>
+    <% @image.each do |image| %>
+        <td><strong><%= image.img %></strong><br> </td>
+    <% end %>
+    <br>
 
     <%= f.submit %><br>
 <% end %>
