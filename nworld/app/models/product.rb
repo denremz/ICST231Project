@@ -1,6 +1,3 @@
 class Product < ActiveRecord::Base
-
-
-IMG_SRC=["hahha","huhuh","heheh"]
-
+	IMG_URL=["/assets/bubble.png","/assets/cloudcream.png","/assets/cushion.png", "/assets/eyegel.png", "ucream.png"]
 end
