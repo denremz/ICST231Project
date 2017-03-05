@@ -18,11 +18,12 @@
 
 <!--
 <strong>Product Image:</strong>
-<%=@product.img%><br>
 -->
+<img src = "/assets/<%=@product.img%>.png"><br><br>
+
 
 <%= form_for @product, :url => {:action => "update"} do |f| %>
-	<%= f.hidden_field :reserved, value:(@product.reserved - 1) %>
+	<%= f.hidden_field :reserved, value:(@product.reserved + 1) %>
 	<%= f.submit 'Reserve One' %>
 <% end %>
 
