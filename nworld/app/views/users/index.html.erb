@@ -9,7 +9,6 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/products"><span><img src="http://www.thealphanetworld.com/images/logo.png" width="130" height="26"></span></a>
-	
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,8 +16,8 @@
       <ul class="nav navbar-nav">
         <li ><a href="/products">Home <span class="sr-only">(current)</span></a></li>
 
-     <!--  <li><a href="/users">Users List</a></li>  -->
-     <!--   <li class="dropdown">
+        <!--  <li><a href="/users">Users List</a></li>  -->
+        <!--   <li class="dropdown">
           <a href="/prod" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
@@ -29,104 +28,42 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>
-        </li>
       </ul>
-	  </li>
-      </ul>
-	  
 
-	  
       <ul class="nav navbar-nav navbar-right ">
-  
-		  <% if user_signed_in? %>
- <li><a href="/profile"><%= current_user.first %> <%= current_user.last %></a></li>
-  <li><%= link_to 'Edit User Account', edit_user_registration_path, :class => '' %>  </li> 
-  <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => ''  %>  <li>
-<% else %>
- <li> <%= link_to "Sign up", new_user_registration_path, :class => ''  %>  </li>
-  <li><%= link_to "Login", new_user_session_path, :class => ''  %> </li>
-<% end %>
-
-          </ul>
-        </li>
+        <% if user_signed_in? %>
+          <li><a href="/profile"><%= current_user.first %> <%= current_user.last %></a></li>
+          <li><%= link_to 'Edit User Account', edit_user_registration_path, :class => '' %>  </li> 
+          <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => ''  %>  <li>
+        <% else %>
+          <li> <%= link_to "Sign up", new_user_registration_path, :class => ''  %>  </li>
+          <li><%= link_to "Login", new_user_session_path, :class => ''  %> </li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>
-
-
-
-
-
-
+</nav> <!-- /.navbar-default -->
 
 <!--DEVISE-->
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
+
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 <!--DEVISE END -->
 
-
-
-
-
-
-
-
 <% @product.each do |product| %>
+  <% if product.num_stock !=0  %>
 
-<% if product.num_stock !=0  %>
-
-
-<!--CSS-->
-
-
-
+  <!--CSS-->
   <div class="btn-group btn-group-xs-justified-column">
     <a href="/products/<%=product.id%>" class="thumbnail">
-      <img src="assets/<%=product.img%>" > </a>
-	  
-	  
-	  
-	  <div class="btn-group btn-group-xs-justified-column" role="group">
+    <img src="assets/<%=product.img%>" > </a>
+    <div class="btn-group btn-group-xs-justified-column" role="group"> </div>
+  </div>
+  <!--endCSS-->
 
-
-</div>
-
- </div>
-
-
-
-<!--endCSS-->
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <% end %>
 <% end %>
-
-
-<% end %>
-
-
-
-
-
-
-
-
-
-
-
-
