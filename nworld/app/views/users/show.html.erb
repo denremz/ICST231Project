@@ -1,46 +1,30 @@
 <strong>Name:</strong>
 <%=@product.name%><br>
 
-
 <strong>Suggested Retail Price:</strong>
 <%=@product.srp%><br>
-
 
 <strong>Retail Price:</strong>
 <%=@product.retail_price%><br>
 
-
 <strong>Distributor Price:</strong>
 <%=@product.distributor_price%><br>
-
 
 <strong>Number of Stock:</strong>
 <%=@product.num_stock%><br>
 
-
-
 <strong>Reserved:</strong>
 <%=@product.reserved%><br>
-
 
 <!--
 <strong>Product Image:</strong>
 <%=@product.img%><br>
-
-
 -->
 
- <%= form_for @product, :url => {:action => "update"} do |f| %>
- 
+<%= form_for @product, :url => {:action => "update"} do |f| %>
 	<%= f.hidden_field :reserved, value:(@product.reserved - 1) %>
 	<%= f.submit 'Reserve One' %>
-	<% end %>
+<% end %>
 
-	
-
-	<a href="/products"> Back to Main </a><br>
-
-
+<a href="/products"> Back to Main </a><br>
 <!--<button type="button" class="btn btn-default"><%= link_to 'Reserve One',"" %> -->
-
-
