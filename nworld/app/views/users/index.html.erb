@@ -1,40 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Nworld</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-
-
-<!--DEVISEHEAD-->
-
-<%-# commented line -%>
-
-<% if false %>
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-
-
-
-<!--DEVISEHEAD-->
-
-
-
-
-
-
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -54,7 +17,7 @@
       <ul class="nav navbar-nav">
         <li ><a href="/products">Home <span class="sr-only">(current)</span></a></li>
 
-       <li><a href="/users">Users List</a></li> 
+     <!--  <li><a href="/users">Users List</a></li>  -->
      <!--   <li class="dropdown">
           <a href="/prod" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
           <ul class="dropdown-menu">
@@ -107,9 +70,63 @@
 <!--DEVISE END -->
 
 
+
+
+
+
+
+
+<% @product.each do |product| %>
+
+<% if product.num_stock !=0  %>
+
+
+<!--CSS-->
+
+
+
+  <div class="btn-group btn-group-xs-justified-column">
+    <a href="/products/<%=product.id%>" class="thumbnail">
+      <img src="assets/<%=product.img%>" > </a>
+	  
+	  
+	  
+	  <div class="btn-group btn-group-xs-justified-column" role="group">
+
+
+</div>
+
+ </div>
+
+
+
+<!--endCSS-->
+
+
+
+
+
+
+
+
+
+
+
+
+
 <% end %>
 
-<%= yield %>
 
-</body>
-</html>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+

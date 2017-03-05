@@ -1,0 +1,47 @@
+
+
+<center><h1>Profile  <h1></center>  
+
+
+
+ 
+
+<thead>
+<tr>
+
+<tr>
+</thead>
+<tbody>
+<% @user.each do |user| %>
+<tr>
+
+<center>
+<strong>Email:</strong><%=user.email%><br><br>
+<strong>Type:</strong><%=user.usertype%><br><br>
+<strong>First_Name:</strong><%=user.first%><br><br>
+<strong>Last_Name:</strong><%=user.last%><br><br>
+<strong>Gender:</strong><%=user.sex%><br><br>
+<strong>Birthday:</strong><%=user.birthday%><br><br>
+<strong>Address:</strong><%=user.address%><br><br>
+</center>
+
+</tr>
+<% end %>
+
+</tbody>
+</table>
+
+</div>
+
+
+
+
+
+
+
+
+<a href="/products"> Back to Main </a><br>
+
+
+
+
