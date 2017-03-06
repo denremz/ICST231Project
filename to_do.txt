@@ -1,2 +1,6 @@
+done
+//add username column to User
 rails generate migration AddUsernameToUsers username:string
-bundle exec rake db:migrate
+
+to do
+add image upload form
