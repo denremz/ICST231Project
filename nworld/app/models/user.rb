@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 	User_Class = ["Administrator", "Retailer"]
 	Sex_Class = ["Male", "Female"]
-	MS = ["SIngle", "Married", "Widowed"]
+	MS = ["Single", "Married", "Widowed"]
 	Reg = ["True", "False"]
 end
