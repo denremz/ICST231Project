@@ -21,7 +21,7 @@
     <%= f.text_field :reserved %><br><br>
 
 	<%= f.label :Product_Image%><br>
-    <%= f.text_field :img %><br><br>
+    <%= f.select(:img, Product::IMG_SRC) %><br><br>
 <%= f.submit %><br>
 <% end %>
 
