@@ -1,11 +1,11 @@
-
 <center>
 
 <%= form_for @product, :url => {:action => "create"} do |f| %>
-<h2> ADD NEW PRODUCT </h2>
+    <h2> ADD NEW PRODUCT </h2>
+
     <%= f.label :Name %><br>
     <%= f.text_field :name %><br><br>
-  
+
     <%= f.label :Suggested_Retail_Price%><br>
     <%= f.text_field :srp %><br><br>
 
@@ -21,29 +21,16 @@
     <%= f.label :Reserved %><br>
     <%= f.text_field :reserved %><br><br>
 
-	<%= f.label :Product_Image%><br>
-	<%= f.text_field :img %><br><br>
-    
-	
-	
-	<!--<%= f.select(:img,Product::IMG_SRC) %><br><br>-->
-	
+    <%= f.label :Product_Image%><br>
+    <%= f.select(:img, Product::IMG_SRC) %><br><br>
 
-	
-	
+    <i>List Of Images:<br></i>
+    <% @image.each do |image| %>
+        <td><strong><%= image.img %></strong><br> </td>
+    <% end %>
+    <br>
 
-
-<i>List Of Images:<br></i>
-<% @image.each do |image| %>
-
-<td><strong><%= image.img %></strong><br> </td>
-
+    <%= f.submit %><br>
 <% end %>
-<br>
-
-	
-<%= f.submit %><br>
-<% end %>
-
 
 </center>
