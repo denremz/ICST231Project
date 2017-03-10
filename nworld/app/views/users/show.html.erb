@@ -16,7 +16,16 @@
 <strong>Reserved:</strong>
 <%=@product.reserved%><br>
 
+<!--
 <strong>Product Image:</strong>
-<%=@product.img%><br>
+-->
+<img src = "/assets/<%=@product.img%>.png"><br><br>
 
-<a href="/admins"> Back to Main </a><br>
+
+<%= form_for @product, :url => {:action => "update"} do |f| %>
+	<%= f.hidden_field :reserved, value:(@product.reserved + 1) %>
+	<%= f.submit 'Reserve One' %>
+<% end %>
+
+<a href="/products"> Back to Main </a><br>
+<!--<button type="button" class="btn btn-default"><%= link_to 'Reserve One',"" %> -->
