@@ -20,7 +20,7 @@
 <%=@product.img%>
 <br>
 <strong>Product Image:</strong>
-<img src = "<%=@product.img%>">
+<img src = "/assets/<%=@product.img%>">
 
 
  <%= form_for @product, :url => {:action => "update"} do |f| %>
