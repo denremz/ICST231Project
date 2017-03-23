@@ -1,0 +1,40 @@
+
+<div class="container">
+<center>
+<h1>Profile  </h1> 
+
+<thead>
+<tr>
+
+<tr>
+</thead>
+<table>
+<tbody>
+<% @user.each do |user| %>
+<tr>
+
+<center>
+<strong>Username: </strong><%=user.username%><br><br>
+<strong>First Name: </strong><%=user.first%><br><br>
+<strong>Middle Name: </strong><%=user.middle%><br><br>
+<strong>Last Name: </strong><%=user.last%><br><br>
+<strong>Address: </strong><%=user.address%><br><br>
+<strong>Gender: </strong><%=user.sex%><br><br>
+</center>
+
+</tr>
+<% end %>
+
+</tbody>
+</table>
+
+<a href="/home"> Back to Main </a><br>
+</div>
+
+
+</center> 
+
+
+</div>
+
+

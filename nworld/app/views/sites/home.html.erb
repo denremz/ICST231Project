@@ -1,0 +1,30 @@
+
+
+<% if session[:user_type] == "admin" %>
+
+
+
+
+
+<script type="text/javascript">
+    window.location.href="/adminProduct" 
+</script>
+
+
+<% elsif session[:user_type] == "retailer"  %>
+
+
+
+<script type="text/javascript">
+    window.location.href="/homepage" 
+</script>
+
+
+
+
+
+
+<% end %>
+
+
+

@@ -1,0 +1,55 @@
+
+<center>
+
+<h1>Product Reservation Form</h1>
+<i><b>Note</b><br>Quantity must be atleast 1 to reserve the product Successfuly
+<br>Quantity : Maximum of 10 only</i><br><br><br>
+
+
+
+<%= form_for @reservation, :url => {:action => "createreserve"} do |f| %>
+
+
+
+
+<% if @reservation.errors.any? %>
+    <!--<div id="error_explanation">
+  
+
+  <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2> -->
+<div class="alert alert-danger fade in">
+Error!
+
+  <ol>
+      <% @reservation.errors.full_messages.each do |message| %>
+       <%= message %><br>
+      <% end %>
+      </ol>
+    </div>
+
+<!--      <ul>
+      <% @reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>-->
+	  
+    </div>
+  <% end %>
+
+<%= f.hidden_field :name, value:(@usern) %>
+<%= f.hidden_field :product, value:(@product.name) %>
+<%= f.hidden_field :product_id, value:(@product.id) %>
+<%= f.hidden_field :status, value:("Pending") %>
+
+<%= f.label :"Quantity (Dozen)"%><br>
+<%= f.number_field :quantity , :class=> 'box', :placeholder=> 'Positive Integer' %><br><br>
+
+	
+<%= f.submit 'Reserve' , data: { confirm: 'Are you Sure?' } %><br>
+
+
+<% end %>
+
+
+
+</center>

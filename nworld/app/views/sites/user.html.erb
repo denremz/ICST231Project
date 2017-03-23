@@ -1,0 +1,47 @@
+<% if notice %>
+<p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
+
+<!--<center><h1>Nworld's Retailers  <h1></center>  -->
+
+
+<div class="">
+<h1>Nworld's Retailers </h1>
+<!--<table width="1000px">-->
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Username </th>
+<th>First Name </th>
+<th>Middle Name </th>
+<th>Last Name </th>
+<th>Address </th>
+<th>Gender </th>
+<th>First Access</th>
+<th>Action</th>
+<tr>
+</thead>
+<tbody>
+<% @user.each do |user| %>
+<tr>
+<td><%=user.username%></td>
+<td><%=user.first%></td>
+<td><%=user.middle%></td>
+<td><%=user.last%></td>
+<td><%=user.address%></td>
+<td><%=user.sex%></td>
+<td><%=user.created_at.strftime("%A,%B/%d/%Y")%></td>
+<td><%= link_to 'Delete',"/user/#{user.id}/delete", data: {confirm: 'Are you Sure?'} %></td>
+
+
+</tr>
+<% end %>
+
+</tbody>
+</table>
+<center><button><a href="/adminProduct"> Back to Main </a></button></center>
+</div>
+
+
+
+
