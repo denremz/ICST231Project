@@ -1,0 +1,87 @@
+
+<center>
+
+
+
+
+
+<%= form_for(@user) do |f| %>
+ <% if @user.errors.any? %>
+ 
+ <div class="alert alert-danger fade in">
+Error!
+ 
+  <!--  <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2> -->
+
+	   <ol>
+      <% @user.errors.full_messages.each do |message| %>
+       <%= message %><br>
+      <% end %>
+      </ol>
+    </div>
+	  
+	  
+ <!--     <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>-->
+    </div>
+	
+  <% end %>
+<br>
+
+<!--form-control(for class)-->
+
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username, :class=> 'box'  %>
+  </div>
+ <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, :class=> 'box'  %>
+  </div>
+  <!-- <div class="field">
+    <%= f.label :account_type %><br>
+    <%= f.text_field :account_type, :class=> 'box'  %>
+  </div> -->
+  
+  <%= f.hidden_field :account_type, value:("retailer") %>
+  
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first, :class=> 'box'  %>
+  </div>
+  <div class="field">
+    <%= f.label :middle_name %><br>
+    <%= f.text_field :middle, :class=> 'box'  %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last, :class=> 'box'  %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address, :class=> 'box'  %>
+  </div>
+ <!-- <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :sex, :class=> 'box'  %>
+  </div>-->
+  
+    <div class="form-group">
+   <%= f.label :gender %> <br />
+   <%= f.label :gender_male, 'Male' %>
+   <%= f.radio_button :sex, 'Male', :checked => true %>
+   <%= f.label :gender_female, 'Female' %>
+   <%= f.radio_button :sex, 'Female' %><br />
+</div>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+</center>

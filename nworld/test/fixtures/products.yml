@@ -7,7 +7,7 @@ one:
   distributor_price: 9.99
   num_stock: 1
   reserved: 1
-  img: MyString
+  image: MyString
 
 two:
   name: MyString
@@ -16,4 +16,4 @@ two:
   distributor_price: 9.99
   num_stock: 1
   reserved: 1
-  img: MyString
+  image: MyString

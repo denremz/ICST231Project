@@ -1,0 +1,43 @@
+<% if notice %>
+<p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
+<div class="container">
+<center>
+<!--<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p> -->
+
+
+<p>
+  <strong>First Name:</strong>
+  <%= @user.first %>
+</p>
+<p>
+  <strong>Middle Name:</strong>
+  <%= @user.middle %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @user.last %>
+</p>
+
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @user.sex %>
+</p>
+
+
+</center>
+</div>
+<!--
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+-->

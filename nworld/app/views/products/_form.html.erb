@@ -1,0 +1,61 @@
+
+<center>
+
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div class="alert alert-danger fade in">
+Error!
+   <!--   <%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved: -->
+
+      <ol>
+      <% @product.errors.full_messages.each do |message| %>
+       <%= message %><br>
+      <% end %>
+      </ol>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :class=> 'box' %>
+  </div>
+  <div class="field">
+    <%= f.label :suggested_retail_price %><br>
+    <%= f.text_field :srp, :class=> 'box' %>
+  </div>
+  <div class="field">
+    <%= f.label :retail_price %><br>
+    <%= f.text_field :retail_price, :class=> 'box' %>
+  </div>
+  <div class="field">
+    <%= f.label :distributor_price %><br>
+    <%= f.text_field :distributor_price, :class=> 'box' %>
+  </div>
+  <div class="field">
+    <%= f.label :num_stock %><br>
+    <%= f.number_field :num_stock, :class=> 'box' %>
+  </div>
+  <%= f.hidden_field :reserved, value:(0) %>
+  <!--
+  <div class="field">
+    <%= f.label :reserved %><br>
+    <%= f.number_field :reserved, :class=> 'box' %>
+  </div>
+  -->
+  <div class="field">
+    <%= f.label :image %><br>
+   <!-- <%= f.text_field :image %> -->
+     <%= f.select(:image,Product::IMG_SRC,{include_blank: "Select Image"}, { :class => 'box' }) %>
+  </div>
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+</center>
+
+

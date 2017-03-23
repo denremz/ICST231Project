@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<center>
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Suggested Retail Price:</strong>
+  <%= @product.srp %>
+</p>
+
+<p>
+  <strong>Retail price:</strong>
+  <%= @product.retail_price %>
+</p>
+
+<%= link_to 'Back', '/product' %>
+
+</center>
+</div>
+
+
+<!--
+<p>
+  <strong>Distributor price:</strong>
+  <%= @product.distributor_price %>
+</p>
+
+<p>
+  <strong>Num stock:</strong>
+  <%= @product.num_stock %>
+</p>
+
+<p>
+  <strong>Reserved:</strong>
+  <%= @product.reserved %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @product.image %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+-->
+
+

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  #resources :users, only: [:show, :create, :edit, :update]
+  resources :users, except: [:index]
+  resources :reservations, except: [:index]
+  resources :products, except: [:index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,16 +58,49 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   
-root 'admins#index'
-get 'products', to: 'admins#index'
-get 'products/new', to: 'admins#new' 
-post 'products/create', to: 'admins#create'  
-get 'products/:id', to: 'admins#show'
-get 'products/:id/edit', to: 'admins#edit'
-patch 'products/:id/update', to: 'admins#update'
-get 'products/:id/delete', to: 'admins#delete'
-get 'products/:id/sold', to: 'admins#sold'
-get 'products/:id/add', to: 'admins#add'
-get 'users', to: 'admins#user'
+  #Sessions
+  
+  
+  
+root 'sites#retailerhome' 
+ 
+  get '/register', to: 'users#new'
+  get '/login', to: 'sessions#new'
+post '/login', to: 'sessions#create'
+get '/logout', to: 'sessions#destroy'
+
+
+
+#UserPage(Reatailer)
+get 'homepage', to: 'sites#retailerhome'
+get 'home', to:  'sites#home'
+get 'about', to:  'sites#about'
+get 'product', to:  'sites#retailerproduct'
+get 'profile', to: 'sites#userProfile' #For Viewing Profile Navigation
+get 'users/:id/edit', to: 'users#edit' #For Editing Profie Navigation
+patch 'users/:id/edit', to: 'users#update'
+get '/retailer/:id/reserve', to: 'sites#reserve' #For the Reservation Button For th retailer
+post '/retailer/:id/reserve', to: 'sites#createreserve' #For the createreserve Url action of the Reservation Page
+
+#admin
+get 'adminProduct', to:  'sites#adminview' #For Admin Product
+get '/admins/product/:id', to: 'sites#adminshow' #For Admin Product Show
+get 'admins/:id/admindelete', to: 'sites#admindelete' #For Admin To delete Product
+get 'reservation', to: 'sites#reservations' #For Admin Reservation Navigation
+get 'reservation/:id/delete', to: 'sites#deletereserve' #For the Delete Action in the Reservation List
+get 'user', to: 'sites#user' #For The User List Admin Navigation
+
+get '/reservation/:id/ok', to: 'sites#ok' #Both For Changing Status
+get '/reservation/:id/pend', to: 'sites#pending'
+
+
+get 'listofOk', to: 'sites#showok'#Both For Grouping list
+get 'listofPending', to: 'sites#showpending'
+
+post '/reservation/find', to: 'sites#find'
+
+
+get '/user/:id/delete', to: 'sites#deleteuser' #For Deleting Nworld User
+
 
 end
